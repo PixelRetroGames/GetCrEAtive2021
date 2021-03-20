@@ -10,6 +10,7 @@ public class Character : MonoBehaviour
     public float hp = 100;
     public string[] startingItems;
     public Inventory inventory;
+    public string actionType;
 
     void Start() {
         inventory = GetComponentInChildren<Inventory>();
@@ -18,6 +19,7 @@ public class Character : MonoBehaviour
         if (tag.Equals("Enemy"))
         {
             inventory.setRandomItem();
+            actionType = "attack";
         }
     }
 
@@ -25,6 +27,12 @@ public class Character : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void selectRandomAction()
+    {
+        string[] types = {"attack", "defend"};
+        actionType = types[((int) Random.Range(0, 100)) % 2];
     }
 
     public void setHP(float newHP) {
@@ -43,18 +51,24 @@ public class Character : MonoBehaviour
         target.GetComponent<Character>().setHP(target.GetComponent<Character>().hp - damage);
     }
 
-    public void attack()
+    public void action()
     {
         InventoryItem nextItem = inventory.selectedItem;
-        dealDamage(nextItem.damage);
-        nextItem.durability -= 25;
-        print(nextItem.durability);
-        if (nextItem.durability <= 0)
-        {
-            inventory.RemoveItem(nextItem);
-            inventory.selectedItem = null;
-        }
 
+        if (actionType == "attack")
+        {
+            dealDamage(nextItem.damage);
+            nextItem.durability -= 25;
+            print(nextItem.durability);
+            if (nextItem.durability <= 0)
+            {
+                inventory.RemoveItem(nextItem);
+                inventory.selectedItem = null;
+            }
+        } else {
+            setHP(hp + 50);
+        }
+        
         if (tag.Equals("Enemy"))
         {
             inventory.setRandomItem();

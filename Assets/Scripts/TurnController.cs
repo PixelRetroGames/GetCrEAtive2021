@@ -22,18 +22,19 @@ public class TurnController : MonoBehaviour
         enemyInventory = enemy.GetComponentInChildren<Inventory>();
     }
 
-    public void playerAttack()
+    public void playerAction(string actionType)
     {
-        player.GetComponent<Character>().attack();
-
-        enemyAttack();
+        player.GetComponent<Character>().actionType = actionType;
+        player.GetComponent<Character>().action();
+        enemyAction();
+        enemy.GetComponent<Character>().selectRandomAction();
     }
 
-    public void enemyAttack()
-    {
-        enemy.GetComponent<Character>().attack();
-    }
 
+    public void enemyAction() {
+        enemy.GetComponent<Character>().action();
+    }
+    
     // Update is called once per frame
     void Update()
     {
