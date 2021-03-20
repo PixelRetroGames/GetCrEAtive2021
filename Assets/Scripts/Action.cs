@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Action : MonoBehaviour
 {	
-	private GameObject playerSprite;
+	private GameObject player;
+    private GameObject item;
     // Start is called before the first frame update
     void Start()
     {
-        playerSprite = transform.parent.parent.parent.GetChild(0).gameObject;
+        player = transform.parent.parent.parent.gameObject;
+        item = transform.parent.gameObject;
     }
 
     // Update is called once per frame
@@ -18,9 +20,7 @@ public class Action : MonoBehaviour
     }
 
     public void attack() {
-        playerSprite.transform.position = new Vector3(
-			playerSprite.transform.position.x + 5,
-			playerSprite.transform.position.y,
-			playerSprite.transform.position.z);
+        print("skrrr");
+        player.GetComponent<Character>().dealDamage(item.GetComponent<InventoryItem>().damage);
     }
 }

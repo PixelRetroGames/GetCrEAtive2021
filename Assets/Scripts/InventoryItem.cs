@@ -6,6 +6,8 @@ public class InventoryItem : MonoBehaviour
 {
 
 	public GameObject inventory;
+    public float damage;
+    public float block;
     // Start is called before the first frame update
     void Start() {
         inventory = this.transform.parent.gameObject;

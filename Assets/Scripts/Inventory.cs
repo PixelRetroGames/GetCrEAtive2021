@@ -5,16 +5,22 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     public ArrayList items = new ArrayList();
-    public GameObject inventoryItem;
     public GameObject actionButton;
     public int numItems;
     public int rowSize = 2;
+
+    public GameObject allItems;
     // Start is called before the first frame update
-    void Start() {
-		float height = 0;
-		float row = 0;
+    void instantiateItems() {
+		
+    }
+
+
+    public void initializeItems(string[] itemNames) {
+        float row = 0;
 		float col = 0;
-        for (int i = 1; i <= numItems; i++) {
+        for (int i = 1; i <= itemNames.Length; i++) {
+            GameObject inventoryItem = allItems.GetComponent<AllItems>().getItem(itemNames[i - 1]);
             float width = inventoryItem.GetComponent<RectTransform>().rect.width;
 			print(transform.position.x);
             GameObject item = Instantiate(inventoryItem,
