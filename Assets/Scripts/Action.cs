@@ -18,6 +18,9 @@ public class Action : MonoBehaviour
     }
 
     public void attack() {
-        playerSprite.transform.position = new Vector3(100,100, playerSprite.transform.position.z);
+        playerSprite.transform.position = new Vector3(
+			playerSprite.transform.position.x + 5,
+			playerSprite.transform.position.y,
+			playerSprite.transform.position.z);
     }
 }

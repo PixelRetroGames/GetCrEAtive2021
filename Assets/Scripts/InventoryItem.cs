@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class InventoryItem : MonoBehaviour
 {
+
+	public GameObject inventory;
     // Start is called before the first frame update
     void Start() {
-        
+        inventory = this.transform.parent.gameObject;
     }
 
     // Update is called once per frame
@@ -16,6 +18,11 @@ public class InventoryItem : MonoBehaviour
     }
 
     public void clickedItem() {
+		foreach(Transform child in inventory.transform) {
+        	child.GetChild(0).gameObject.SetActive(false);
+       		child.GetChild(1).gameObject.SetActive(false);
+		}
+
         this.transform.GetChild(0).gameObject.SetActive(true);
         this.transform.GetChild(1).gameObject.SetActive(true);
     }
