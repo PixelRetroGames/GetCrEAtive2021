@@ -3,24 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Action : MonoBehaviour
-{	
-	private GameObject player;
-    private GameObject item;
-    // Start is called before the first frame update
+{
+    private TurnController controller;
+    private InventoryItem item;
+    private Inventory inventory;
     void Start()
     {
-        player = transform.parent.parent.parent.gameObject;
-        item = transform.parent.gameObject;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        controller = GameObject.FindGameObjectWithTag("TurnController").GetComponent<TurnController>();
+        item = transform.parent.gameObject.GetComponent<InventoryItem>();
+        inventory = GetComponentInParent<Inventory>();
     }
 
     public void attack() {
-        print("skrrr");
-        player.GetComponent<Character>().dealDamage(item.GetComponent<InventoryItem>().damage);
+        inventory.setSelectedItem(item);
+        controller.playerAttack();
     }
 }

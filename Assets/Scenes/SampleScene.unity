@@ -256,11 +256,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2839446943413542689, guid: 120d21992c3b47349be5024fa3bb7db0,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3532575397379394772, guid: 120d21992c3b47349be5024fa3bb7db0,
+        type: 3}
+      propertyPath: startingItems.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3532575397379394772, guid: 120d21992c3b47349be5024fa3bb7db0,
         type: 3}
       propertyPath: other
       value: 
       objectReference: {fileID: 298331778}
+    - target: {fileID: 3532575397379394772, guid: 120d21992c3b47349be5024fa3bb7db0,
+        type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 298331778}
+    - target: {fileID: 3532575397379394772, guid: 120d21992c3b47349be5024fa3bb7db0,
+        type: 3}
+      propertyPath: startingItems.Array.data[0]
+      value: sword
+      objectReference: {fileID: 0}
+    - target: {fileID: 3532575397379394772, guid: 120d21992c3b47349be5024fa3bb7db0,
+        type: 3}
+      propertyPath: startingItems.Array.data[1]
+      value: fists
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 120d21992c3b47349be5024fa3bb7db0, type: 3}
 --- !u!1 &519420028
@@ -346,6 +371,7 @@ Transform:
   - {fileID: 1654833070}
   - {fileID: 1263237195}
   - {fileID: 525917703}
+  - {fileID: 896936285}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -400,15 +426,60 @@ MonoBehaviour:
   itemNames:
   - sword
   - shield
+  - fists
   items:
   - {fileID: 6948584561147335035, guid: 983bc79598ea12644af769cb10bbab17, type: 3}
   - {fileID: 4218687547531204609, guid: cf9bd7a598b9170448a4b6220bcb2290, type: 3}
+  - {fileID: 6948584561147335035, guid: 916af518433a10f00a832f9b114786d4, type: 3}
 --- !u!4 &669840032 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2839446943413542688, guid: 120d21992c3b47349be5024fa3bb7db0,
     type: 3}
   m_PrefabInstance: {fileID: 341373410}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &896936284
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 896936285}
+  - component: {fileID: 896936286}
+  m_Layer: 0
+  m_Name: MainController
+  m_TagString: TurnController
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &896936285
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 896936284}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 519420032}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &896936286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 896936284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 171303184e169bfa88e5d24cbf306f96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1213801814 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2839446943413542689, guid: 120d21992c3b47349be5024fa3bb7db0,
@@ -714,7 +785,7 @@ PrefabInstance:
     - target: {fileID: 3532575397379394772, guid: 120d21992c3b47349be5024fa3bb7db0,
         type: 3}
       propertyPath: startingItems.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3532575397379394772, guid: 120d21992c3b47349be5024fa3bb7db0,
         type: 3}
@@ -730,6 +801,16 @@ PrefabInstance:
         type: 3}
       propertyPath: startingItems.Array.data[1]
       value: shield
+      objectReference: {fileID: 0}
+    - target: {fileID: 3532575397379394772, guid: 120d21992c3b47349be5024fa3bb7db0,
+        type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1213801814}
+    - target: {fileID: 3532575397379394772, guid: 120d21992c3b47349be5024fa3bb7db0,
+        type: 3}
+      propertyPath: startingItems.Array.data[2]
+      value: fists
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 120d21992c3b47349be5024fa3bb7db0, type: 3}

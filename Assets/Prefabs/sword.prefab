@@ -489,6 +489,8 @@ MonoBehaviour:
   inventory: {fileID: 0}
   damage: 10
   block: 1
+  durability: 100
+  itemName: sword
 --- !u!1 &7669120258387407013
 GameObject:
   m_ObjectHideFlags: 0
