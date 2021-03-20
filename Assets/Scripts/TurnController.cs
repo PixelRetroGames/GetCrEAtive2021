@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using JetBrains.Annotations;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TurnController : MonoBehaviour
 {
@@ -10,24 +12,24 @@ public class TurnController : MonoBehaviour
     private GameObject player;
     private GameObject enemy;
 
-    private Inventory playerInventory;
-    private Inventory enemyInventory;
-
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         enemy = GameObject.FindGameObjectWithTag("Enemy");
-
-        playerInventory = player.GetComponentInChildren<Inventory>();
-        enemyInventory = enemy.GetComponentInChildren<Inventory>();
+        enemy.transform.GetChild(0).GetChild(1).gameObject.SetActive(true);
+        
     }
 
-    public void playerAction(string actionType)
+
+    public void playerAction(InventoryItem item, string actionType)
     {
+        player.GetComponent<Character>().setSelectedItem(item);
         player.GetComponent<Character>().actionType = actionType;
         player.GetComponent<Character>().action();
         enemyAction();
         enemy.GetComponent<Character>().selectRandomAction();
+        enemy.transform.GetChild(0).GetChild(1).GetComponent<Text>().text = enemy.GetComponent<Character>().actionType;
+
     }
 
 
@@ -35,8 +37,4 @@ public class TurnController : MonoBehaviour
         enemy.GetComponent<Character>().action();
     }
     
-    // Update is called once per frame
-    void Update()
-    {
-    }
 }

@@ -43,10 +43,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void setRandomItem()
-    {
-	    selectedItem = currentItems[0].GetComponent<InventoryItem>();
-    }
+   
     
     public void RemoveItem(InventoryItem item)
     {
@@ -54,9 +51,6 @@ public class Inventory : MonoBehaviour
 	    UpdateItems(currentItemNames);
     }
 
-    public void setSelectedItem(InventoryItem item)
-    {
-	    selectedItem = item;
-    }
+    
     
 }

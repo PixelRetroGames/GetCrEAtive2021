@@ -11,6 +11,7 @@ public class Character : MonoBehaviour
     public string[] startingItems;
     public Inventory inventory;
     public string actionType;
+    private InventoryItem selectedItem;
 
     void Start() {
         inventory = GetComponentInChildren<Inventory>();
@@ -18,21 +19,22 @@ public class Character : MonoBehaviour
 
         if (tag.Equals("Enemy"))
         {
-            inventory.setRandomItem();
+            setRandomItem();
             actionType = "attack";
         }
     }
+    
 
-    // Update is called once per frame
-    void Update()
+    public void setRandomItem()
     {
-        
+        int itemIndex = Random.Range(0, inventory.currentItems.Count);
+        setSelectedItem(inventory.currentItems[itemIndex].GetComponent<InventoryItem>());
     }
-
     public void selectRandomAction()
     {
         string[] types = {"attack", "defend"};
-        actionType = types[((int) Random.Range(0, 100)) % 2];
+        
+        actionType = types[Random.Range(0, 2)];
     }
 
     public void setHP(float newHP) {
@@ -50,28 +52,40 @@ public class Character : MonoBehaviour
         print("" + damage);
         target.GetComponent<Character>().setHP(target.GetComponent<Character>().hp - damage);
     }
+    
+    public void setSelectedItem(InventoryItem item)
+    {
+        if (selectedItem != null) {
+            selectedItem.transform.GetChild(2).gameObject.SetActive(false);
+        }
+
+        selectedItem = item;
+
+        if (CompareTag("Enemy"))
+        {
+            item.transform.GetChild(2).gameObject.SetActive(true);
+        }
+    }
 
     public void action()
     {
-        InventoryItem nextItem = inventory.selectedItem;
-
+        
         if (actionType == "attack")
         {
-            dealDamage(nextItem.damage);
-            nextItem.durability -= 25;
-            print(nextItem.durability);
-            if (nextItem.durability <= 0)
+            dealDamage(selectedItem.damage);
+            selectedItem.durability -= 25;
+            if (selectedItem.durability <= 0)
             {
-                inventory.RemoveItem(nextItem);
-                inventory.selectedItem = null;
+                inventory.RemoveItem(selectedItem);
+                selectedItem = null;
             }
         } else {
             setHP(hp + 50);
         }
         
-        if (tag.Equals("Enemy"))
+        if (CompareTag("Enemy"))
         {
-            inventory.setRandomItem();
+            setRandomItem();
         }
     }
 }

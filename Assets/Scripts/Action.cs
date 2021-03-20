@@ -14,12 +14,10 @@ public class Action : MonoBehaviour
     }
 
     public void attack() {
-        inventory.setSelectedItem(item);
-        controller.playerAction("attack");
+        controller.playerAction(item, "attack");
     }
 
     public void defend() {
-        inventory.setSelectedItem(item);
-        controller.playerAction("defend");
+        controller.playerAction(item, "defend");
     }
 }

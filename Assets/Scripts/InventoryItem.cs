@@ -13,18 +13,6 @@ public class InventoryItem : MonoBehaviour
 	
     public string itemName;
     
-    // Start is called before the first frame update
-    void Start()
-    {
-	    
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void clickedItem()
     {
 	    GameObject player = transform.parent.parent.gameObject;
