@@ -5,8 +5,7 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     public Node currentNode;
-
-
+    
     public void setHighlights() {
         currentNode.gameObject.transform.Find("Highlight").gameObject.SetActive(true);
         for (int i = 0; i < currentNode.next.Length; i++) {
@@ -31,6 +30,7 @@ public class GameController : MonoBehaviour
     void Start()
     {
         setHighlights();
+        DontDestroyOnLoad(gameObject);
     }
 
     // Update is called once per frame

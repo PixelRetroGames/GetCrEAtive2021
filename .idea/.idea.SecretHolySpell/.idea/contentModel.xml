@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Mircea\AppData\Local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Mircea\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_SecretHolySpell.531297830.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Mircea\Desktop\SecretHolySpell" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="KeepMe.cs" t="Include" />
+        <e p="Scripts" t="Include">
+          <e p="Action.cs" t="Include" />
+          <e p="AllItems.cs" t="Include" />
+          <e p="Character.cs" t="Include" />
+          <e p="GameController.cs" t="Include" />
+          <e p="Inventory.cs" t="Include" />
+          <e p="InventoryItem.cs" t="Include" />
+          <e p="ItemDescription.cs" t="Include" />
+          <e p="ItemProcessor.cs" t="Include" />
+          <e p="Line.cs" t="Include" />
+          <e p="mySceneManager.cs" t="Include" />
+          <e p="NextButton.cs" t="Include" />
+          <e p="Node.cs" t="Include" />
+          <e p="TurnController.cs" t="Include" />
+        </e>
+      </e>
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="SecretHolySpell.sln" t="IncludeFlat" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>

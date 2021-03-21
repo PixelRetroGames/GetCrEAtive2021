@@ -181,6 +181,7 @@ MonoBehaviour:
   startingItems: []
   inventory: {fileID: 0}
   actionType: 
+  moving: 0
 --- !u!1 &8023653302579259492
 GameObject:
   m_ObjectHideFlags: 0

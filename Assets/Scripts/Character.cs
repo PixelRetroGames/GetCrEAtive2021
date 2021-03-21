@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Net;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
@@ -94,16 +95,7 @@ public class Character : MonoBehaviour
     public void setHP(float newHP)
     {
         hp = Mathf.Max(0, newHP);
-        GetComponentInChildren<Text>().text = "" + hp;
-        if (hp != 0) return;
-        if (CompareTag("Player"))
-        {
-            Application.Quit();
-        }
-        else
-        {
-            print("You won");
-        }
+        GetComponentInChildren<Text>().text = "" + hp + "HP";
     }
 
     public void dealDamage(float damage)
@@ -127,12 +119,15 @@ public class Character : MonoBehaviour
         }
     }
 
+    
+
     public void action()
     {
         if (actionType == "attack")
         {
             dealDamage(selectedItem.damage);
             selectedItem.durability -= 25;
+            selectedItem.updateDurabilityText();
             if (selectedItem.durability <= 0)
             {
                 inventory.RemoveItem(selectedItem);

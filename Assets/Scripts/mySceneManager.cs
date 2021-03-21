@@ -9,6 +9,6 @@ public class mySceneManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        myLoadedAssetBundle = AssetBundle.LoadFromFile("Scenes/SampleScene");
+        // myLoadedAssetBundle = AssetBundle.LoadFromFile("Scenes/SampleScene");
     }
 }

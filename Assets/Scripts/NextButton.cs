@@ -8,8 +8,8 @@ public class NextButton : MonoBehaviour
     // Start is called before the first frame update
     private GameController gameController;
     public void onClick() {
-        SceneManager.LoadScene("Scenes/SampleScene", LoadSceneMode.Single);
         gameController.setNext(transform.parent.gameObject.GetComponent<Node>());
+        SceneManager.LoadScene("Scenes/SampleScene", LoadSceneMode.Single);
     }
 
     void Start()
