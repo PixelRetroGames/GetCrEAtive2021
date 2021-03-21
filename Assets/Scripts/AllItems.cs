@@ -7,16 +7,8 @@ public class AllItems : MonoBehaviour
     // Start is called before the first frame update
     public string[] itemNames;
     public GameObject[] items;
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public GameObject getItem(string name) {
         for (int i = 0; i < itemNames.Length; i++) {

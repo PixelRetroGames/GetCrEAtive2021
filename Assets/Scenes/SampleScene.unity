@@ -453,6 +453,7 @@ GameObject:
   m_Component:
   - component: {fileID: 896936285}
   - component: {fileID: 896936286}
+  - component: {fileID: 896936287}
   m_Layer: 0
   m_Name: MainController
   m_TagString: TurnController
@@ -484,6 +485,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 171303184e169bfa88e5d24cbf306f96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &896936287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 896936284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e76aac93784d913bc8f841622edf89f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1213801814 stripped
@@ -1125,12 +1138,12 @@ PrefabInstance:
     - target: {fileID: 2839446942364175419, guid: 120d21992c3b47349be5024fa3bb7db0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.71
+      value: -4.34
       objectReference: {fileID: 0}
     - target: {fileID: 2839446942364175419, guid: 120d21992c3b47349be5024fa3bb7db0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.8
+      value: -1.72
       objectReference: {fileID: 0}
     - target: {fileID: 2839446942873323836, guid: 120d21992c3b47349be5024fa3bb7db0,
         type: 3}
